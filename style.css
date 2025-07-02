@@ -1,0 +1,111 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: rgb(155, 150, 150);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+h1 {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+#status {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f9f9f9;
+}
+
+.game-wrapper {
+  background-color: white;
+  padding: 10px;
+  border: 4px solid #444;
+  display: inline-block;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  background-color: white;
+}
+
+.cell {
+  background-color: white;
+  border: 2px solid #444;
+  font-size: 5 rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cell.taken {
+  pointer-events: none;
+}
+
+.cell.x {
+  color: rgb(231, 67, 67);
+}
+
+.cell.o {
+  color: rgb(75, 75, 150);
+}
+
+#resetBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 2rem;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#resetBtn:hover {
+  background-color: #005f7a;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+  .board {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+  }
+
+  .cell {
+    font-size: 1.5 rem;
+  }
+
+  .scoreboard {
+    flex-direction: column;
+    gap: 5 px;
+  }
+}
